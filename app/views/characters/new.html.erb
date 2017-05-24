@@ -1,0 +1,14 @@
+<h1>Create a New Character</h1>
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+    <p><%= error %></p>
+    <% end %>
+<% end %>
+<form action ="/characters" method="post">
+    <input name="authenticity_token" value="<%=form_authenticity_token%>" type="hidden">
+    <h2>First Name: <input type="text" name="first_name" placeholder="First Name"/></h2>
+    <h2>Last Name: <input type="text" name="last_name" placeholder="Last Name"/></h2>
+    <h2>Workplace: <input type="text" name="workplace" placeholder="Workplace"/></h2>
+    <input type="submit" value="Create"/>
+</form>
+<a href="/">Home</a>
